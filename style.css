@@ -94,11 +94,12 @@ margin-top: 8px;
     left: 0;
     transform: translateY(-50%);
     top: 50%;
+
+    animation: slide-back 0.2s;
   }
 
   .light #switch button {
-    right: 0;
-    left: initial;
+    animation: slide-in 0.2s forwards;
 
   }
 
@@ -111,6 +112,10 @@ margin-top: 8px;
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     border-radius: 50px;
+  }
+
+  #switch button:hover {
+    outline: 8px solid var(--hover-social)
   }
 
   ul{
@@ -149,7 +154,7 @@ margin-top: 8px;
 
   #social-links {
    
-    margin-top: 24px;
+    
     padding: 24px 0px;
     display: flex;
     gap: 16px;
@@ -190,4 +195,25 @@ margin-top: 8px;
     .light {
       --bg-url: url(./assets/bg-full-light.jpg)
     }
+  }
+  @keyframes slide-in {
+    from{
+      left: 0;
+    } to {
+      left: 50%;
+    }
+  }
+
+  @keyframes slide-back {
+    from {
+      left: 50%
+    }
+    to{
+      left:0;
+    }
+  }
+
+  #divcont {
+    text-align: center;
+    margin-top: 15px;
   }
